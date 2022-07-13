@@ -1,7 +1,7 @@
 import { initTodoListHandler } from './todoList.js';
 import { renderTasks } from './render.js';
 
-// algo 
+// algo
 
 // 1 create functions that will set and get items from local storage
 // 2 create an event for input field and for create-btn to add new task to localStorage.tasksList
