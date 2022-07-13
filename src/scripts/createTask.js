@@ -1,17 +1,13 @@
 import { renderTasks } from './render.js';
 import { getItem, setItem } from './storage.js';
 
-// input none
-// output undefined
-
 export const createTask = () => {
   const inputElem = document.querySelector('.task-input'); // выбираем инпут
   const text = inputElem.value; // переменная text содержит значение input.value
   if (!text) {
-    // если там '' выходим из ф-и
     return;
   }
-  inputElem.value = ''; // обнуляем поле input
+  inputElem.value = '';
 
   const tasksList = getItem('tasksList') || []; // создаём список задач, берём с хранилища 'tasksList' или пустой массив если значение null
 
@@ -23,7 +19,7 @@ export const createTask = () => {
     id: Math.random().toString(),
   });
 
-  setItem('tasksList', newTasksList); // устанавливаем ключу 'tasksList' новое значение 'newTasksList'
+  setItem('tasksList', newTasksList);
 
   renderTasks();
 };
