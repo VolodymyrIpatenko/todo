@@ -18,7 +18,8 @@ const createCheckbox = ({ done, id }) => {
 };
 // input object
 // output new object
-const createListItem = ({ text, done, id }) => { // берём из объекта выбранные свойства
+const createListItem = ({ text, done, id }) => {
+  // берём из объекта выбранные свойства
   const listItemElem = document.createElement('li');
   listItemElem.classList.add('list__item'); // добавляем созданому элементу класс 'list__item'
   const checkboxElem = createCheckbox({ done, id }); // создаём чекбокс

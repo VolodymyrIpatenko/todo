@@ -22,4 +22,4 @@ const onStorageChange = event => {
   }
 };
 
-window.addEventListener('storage', onStorageChange); // при изменении Storage делаем функцию для всех владок
+window.addEventListener('storage', onStorageChange); // при изменении Storage делаем функцию для всех владокb0
