@@ -10,11 +10,13 @@
     "copy:html": "cp ./src/index.html ./dist/index.html",
     "copy:scripts": "cp -R ./src/scripts ./dist/scripts",
     "clean": "rm -rf ./dist",
-    "build": "npm-run-all clean build:styles copy:*"
+    "build:scripts": "babel ./src --out-dir=./dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
     "jest": "^28.1.3",
     "sass": "^1.54.0"
