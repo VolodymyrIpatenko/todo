@@ -1,20 +1,27 @@
 "use strict";
 
-var _profile = require("./profile");
+var _todoList = require("./todoList.js");
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+var _render = require("./render.js");
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var userData = {
-  name: 'Tom',
-  age: 17
-};
-
-var profile = _objectSpread(_objectSpread({}, userData), {}, {
-  company: 'Gromcode'
+// algo
+// 1 create functions that will set and get items from local storage
+// 2 create an event for input field and for create-btn to add new task to localStorage.tasksList
+// 3 cerate an event that will toggle done status in localStorage.tasksList
+// 4 create functions that will add new elements in DOM using our localStorage array
+// 5 create an event for window that will synchronize all storage changes if event.key === 'tasksList'
+document.addEventListener('DOMContentLoaded', function () {
+  // после загрузки DOM, отрисовываем элементы и добавляем функции кнопке и инпуту
+  (0, _render.renderTasks)();
+  (0, _todoList.initTodoListHandler)();
 });
 
-(0, _profile.printProfile)(profile);
+var onStorageChange = function onStorageChange(event) {
+  console.log(event);
+
+  if (event.key === 'tasksList') {
+    (0, _render.renderTasks)();
+  }
+};
+
+window.addEventListener('storage', onStorageChange); // при изменении Storage делаем функцию для всех

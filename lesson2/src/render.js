@@ -36,6 +36,8 @@ const createListItem = ({ text, done, id }) => {
 export const renderTasks = () => {
   const tasksList = getItem('tasksList') || []; // создаём список задач, берём с хранилища 'tasksList' или пустой массив если значение null
   listElem.innerHTML = ''; // обнуляем список ul '.list'
-  const tasksElems = tasksList.sort((a, b) => a.done - b.done).map(createListItem); // создаём новый массив тасков
+  const tasksElems = tasksList
+    .sort((a, b) => a.done - b.done)
+    .map(createListItem); // создаём новый массив тасков
   listElem.append(...tasksElems); // c помощью spread разоврачиваем массив и добавляем все элементы в ul список 'list'
 };
