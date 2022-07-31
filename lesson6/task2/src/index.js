@@ -1,4 +1,4 @@
-import { printProfile } from './profile';
+import { printProfile } from './profile/profile.js';
 
 const userData = {
   name: 'Tom',
