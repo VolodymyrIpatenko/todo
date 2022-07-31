@@ -11,7 +11,7 @@ module.exports = {
       },
       {
         test: /.scss$/,
-        use: ['style-loader', 'scss-loader'],
+        use: ['style-loader', 'css-loader', 'scss-loader'],
       },
       {
         test: /.(jpg|png)$/,
