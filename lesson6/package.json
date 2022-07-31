@@ -1,16 +1,17 @@
 {
-  "name": "task2",
+  "name": "lesson6",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:scripts": "webpack"
+    "build": "webpack ",
+    "watch": "webpack -d --devtools eval-source-maps -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   }
 }
