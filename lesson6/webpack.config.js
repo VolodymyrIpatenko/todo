@@ -10,8 +10,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /.scss$/,
-        use: ['css-loader', 'style-loader', 'scss-loader'],
+        test: /.sass$/,
+        use: ['css-loader', 'style-loader', 'sass-loader'],
       },
       {
         test: /.(jpg|png)$/,
