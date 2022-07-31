@@ -10,8 +10,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /.scss$/,
-        use: ['css-loader', 'style-loader', 'scss-loader'],
+        test: /.s?css$/,
+        use: ['css-loader', 'style-loader', 'sass-loader'],
       },
       {
         test: /.(jpg|png)$/,
@@ -20,6 +20,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
+              name: '[name].ext',
+              outputPath: 'images',
             },
           },
         ],
