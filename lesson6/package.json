@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "watch": "webpack ./src/index.js --devtool eval-source-maps --watch"
+    "start": "webpack-dev-server -d --devtool eval-source-maps --open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "dev-server": "^0.2.0",
     "file-loader": "^6.2.0",
     "sass": "^1.54.0",
     "sass-loader": "^13.0.2",
